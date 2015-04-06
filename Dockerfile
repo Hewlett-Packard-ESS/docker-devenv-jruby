@@ -14,6 +14,6 @@ RUN cd /tmp && \
     ln -s /opt/jruby-$JRUBY_VERSION /opt/jruby
 
 ENV PATH=$PATH:/opt/jruby/bin
-RUN jgem install bundler rspec
+RUN jgem install bundler rspec rubocop
 
 ENV HPESS_ENV devenv-jruby
