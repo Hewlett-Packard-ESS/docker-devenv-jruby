@@ -11,9 +11,10 @@ RUN cd /tmp && \
     tar -xzf jruby-bin-$JRUBY_VERSION.tar.gz && \
     rm -f *.tar.gz && \
     mv jruby-* /opt && \
-    ln -s /opt/jruby-$JRUBY_VERSION /opt/jruby
+    ln -s /opt/jruby-$JRUBY_VERSION /opt/jruby && \
+    ln -s /opt/jruby/bin/jruby /bin/ruby
 
 ENV PATH=$PATH:/opt/jruby/bin
-RUN jgem install bundler rspec rubocop
+RUN jgem install bundler rspec rubocop guard
 
 ENV HPESS_ENV devenv-jruby
